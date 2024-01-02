@@ -6,7 +6,7 @@ const argv = process.argv;
 
 const filePath = argv[argv.length - 1];
 console.log('file path we care about', filePath);
-cat(filePath);
+
 
 // for (let i = 0; i < argv.length; i++) {
 //   console.log(i, argv);
@@ -23,7 +23,7 @@ cat(filePath);
 async function cat(path) {
 
   try {
-    const file = await fsP.readfile(path, "utf8");
+    const file = await fsP.readFile(path, "utf8");
     console.log("this file's contents:", file);
   } catch {
     console.log("problem with operation");
@@ -34,4 +34,4 @@ async function cat(path) {
 
 
 
-// await cat('./testCat.txt');
+cat(process.argv[2]);
